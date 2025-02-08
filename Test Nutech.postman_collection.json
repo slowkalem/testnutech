@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "78282376-3a3f-4a8a-a988-14ea8d2711cc",
+		"name": "Test Nutech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38292375"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"aldiraahmadwibawa@gmail.com\",\r\n    \"first_name\" : \"Aldira\",\r\n    \"last_name\" : \"Ahmad Wibawa\",\r\n    \"password\" : \"Test123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployed}}/registration",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"aldiraahmadwibawa@gmail.com\",\r\n    \"password\" : \"Test123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployed}}/login",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTRlMTBjLTA3YzctNzA0Ny1iZGNjLTA4NTdiYTJkODMyYSIsImVtYWlsIjoiYWxkaXJhYWhtYWR3aWJhd2FAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IkFsZGlyYSIsImxhc3RfbmFtZSI6IkFobWFkIFdpYmF3YSIsImlhdCI6MTczODk0ODEyNCwiZXhwIjoxNzM4OTkxMzI0fQ.U-x55V71TZnyexVlPOSSSpFVsU6CgAZKbY64hhRDqvk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{deployed}}/profile",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Photo Profil",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTRlMTBjLTA3YzctNzA0Ny1iZGNjLTA4NTdiYTJkODMyYSIsImVtYWlsIjoiYWxkaXJhYWhtYWR3aWJhd2FAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IkFsZGlyYSIsImxhc3RfbmFtZSI6IkFobWFkIFdpYmF3YSIsImlhdCI6MTczODk0ODEyNCwiZXhwIjoxNzM4OTkxMzI0fQ.U-x55V71TZnyexVlPOSSSpFVsU6CgAZKbY64hhRDqvk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/slowkalem/Downloads/pas_foto_new.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{deployed}}/profile/image",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"profile",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upadate Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTRlMTBjLTA3YzctNzA0Ny1iZGNjLTA4NTdiYTJkODMyYSIsImVtYWlsIjoiYWxkaXJhYWhtYWR3aWJhd2FAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IkFsZGlyYSIsImxhc3RfbmFtZSI6IkFobWFkIFdpYmF3YSIsImlhdCI6MTczODk0ODEyNCwiZXhwIjoxNzM4OTkxMzI0fQ.U-x55V71TZnyexVlPOSSSpFVsU6CgAZKbY64hhRDqvk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\" : \"Aldira\",\r\n    \"last_name\" : \"Wibawa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployed}}/profile/update",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Balance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTRlMTBjLTA3YzctNzA0Ny1iZGNjLTA4NTdiYTJkODMyYSIsImVtYWlsIjoiYWxkaXJhYWhtYWR3aWJhd2FAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IkFsZGlyYSIsImxhc3RfbmFtZSI6IkFobWFkIFdpYmF3YSIsImlhdCI6MTczODk0ODEyNCwiZXhwIjoxNzM4OTkxMzI0fQ.U-x55V71TZnyexVlPOSSSpFVsU6CgAZKbY64hhRDqvk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{deployed}}/balance",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Banner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{deployed}}/banner",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"banner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{deployed}}/service",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Up",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTRlMTBjLTA3YzctNzA0Ny1iZGNjLTA4NTdiYTJkODMyYSIsImVtYWlsIjoiYWxkaXJhYWhtYWR3aWJhd2FAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IkFsZGlyYSIsImxhc3RfbmFtZSI6IkFobWFkIFdpYmF3YSIsImlhdCI6MTczODk0ODEyNCwiZXhwIjoxNzM4OTkxMzI0fQ.U-x55V71TZnyexVlPOSSSpFVsU6CgAZKbY64hhRDqvk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"top_up_amount\": 1000000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployed}}/topup",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"topup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTRlMTBjLTA3YzctNzA0Ny1iZGNjLTA4NTdiYTJkODMyYSIsImVtYWlsIjoiYWxkaXJhYWhtYWR3aWJhd2FAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IkFsZGlyYSIsImxhc3RfbmFtZSI6IkFobWFkIFdpYmF3YSIsImlhdCI6MTczODk0ODEyNCwiZXhwIjoxNzM4OTkxMzI0fQ.U-x55V71TZnyexVlPOSSSpFVsU6CgAZKbY64hhRDqvk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_code\": \"PULSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployed}}/transaction",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Transaction history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTRlMTBjLTA3YzctNzA0Ny1iZGNjLTA4NTdiYTJkODMyYSIsImVtYWlsIjoiYWxkaXJhYWhtYWR3aWJhd2FAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6IkFsZGlyYSIsImxhc3RfbmFtZSI6IkFobWFkIFdpYmF3YSIsImlhdCI6MTczODk0ODEyNCwiZXhwIjoxNzM4OTkxMzI0fQ.U-x55V71TZnyexVlPOSSSpFVsU6CgAZKbY64hhRDqvk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{deployed}}/transaction/history?limit=&offset=",
+					"host": [
+						"{{deployed}}"
+					],
+					"path": [
+						"transaction",
+						"history"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": ""
+						},
+						{
+							"key": "offset",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
